@@ -38,7 +38,7 @@ h1 {
     border-radius: 14px;
 }
 
-.back-img {
+.box-img {
     position: absolute;
     top: 40%;
     left: -24%;
@@ -59,6 +59,10 @@ input[type="checkbox"] {
     display: none;
 }
 
+input:checked {
+    background: var(--text-Soft-red);
+}
+
 .accordion {
     border-bottom: 1px solid var(--divider-Light-grayish-blue);
     padding: 0.9em 0;
@@ -70,12 +74,14 @@ input[type="checkbox"] {
     margin: .2em 0;
     display: block;
     position: relative;
+    cursor: pointer;
 }
 
 .accordion label::after {
     content: url(./images/icon-arrow-down.svg);
     position: absolute;
     right: 0;
+    cursor: pointer;
 }
 
 .accordion-content {
@@ -93,4 +99,50 @@ input[type="checkbox"] {
     content: url("images/icon-arrow-down.svg");
     height: 100%;
     transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        height: 75%;
+        position: relative;
+        margin: 3em 0 0 0;
+    }
+
+    .img-container {
+        background: url(./images/illustration-woman-online-mobile.svg) center no-repeat, url(./images/bg-pattern-desktop.svg) no-repeat 52% 50%;
+        background-size: 92%, 92%;
+        height: 75%;
+        margin: 0 auto;
+        width: 75%;
+        position: absolute;
+        left: 2em;
+        top: -17rem;
+    }
+
+    .box-img {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .faq-container {
+        position: relative;
+        top: 6em;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .faq-container {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .accordion {
+        margin: 0 10px;
+    }
+
 }
