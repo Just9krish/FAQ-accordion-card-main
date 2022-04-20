@@ -82,7 +82,7 @@ input[type="checkbox"] {
     font-size: 0.75rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease;
+    transition: max-height 0.4s;
 }
 
 .accordion input:checked~.accordion-content {
