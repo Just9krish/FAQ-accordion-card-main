@@ -1,0 +1,96 @@
+:root {
+    --text-Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --text-Soft-red: hsl(14, 88%, 65%);
+    --gradient-Soft-violet: hsl(273, 75%, 66%);
+    --gradient-Soft-blue: hsl(240, 73%, 65%);
+    --Ntext-Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --NtextDark-grayish-blue: hsl(240, 6%, 50%);
+    --divider-Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    color: var(--NtextDark-grayish-blue);
+}
+
+h1 {
+    color: var(--Ntext-Very-dark-grayish-blue);
+    text-transform: uppercase;
+}
+
+.main {
+    background: linear-gradient(var(--gradient-Soft-violet), var(--gradient-Soft-blue));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    display: flex;
+    border-radius: 14px;
+}
+
+.back-img {
+    position: absolute;
+    top: 40%;
+    left: -24%;
+}
+
+.img-container {
+    background: url(./images/illustration-woman-online-desktop.svg) no-repeat 100% 45%, url(./images/bg-pattern-desktop.svg) no-repeat 100% 70%;
+    width: 400px;
+    position: relative;
+}
+
+.faq-container {
+    max-width: 450px;
+    padding: 3.6em;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.accordion {
+    border-bottom: 1px solid var(--divider-Light-grayish-blue);
+    padding: 0.9em 0;
+}
+
+.accordion label {
+    color: var(--Ntext-Very-dark-grayish-blue);
+    font-size: .9rem;
+    margin: .2em 0;
+    display: block;
+    position: relative;
+}
+
+.accordion label::after {
+    content: url(./images/icon-arrow-down.svg);
+    position: absolute;
+    right: 0;
+}
+
+.accordion-content {
+    font-size: 0.75rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.accordion input:checked~.accordion-content {
+    max-height: 100%;
+}
+
+.accordion input:checked~label::after {
+    content: url("images/icon-arrow-down.svg");
+    height: 100%;
+    transform: rotate(180deg);
+}
